@@ -86,7 +86,7 @@ func PrintEpochVoteStatus(cProps *ConnectionProps) error {
 			candidates = append(candidates, v.Candidate)
 		}
 	}
-	sort.Slice(candidates, func(i, j int) bool { return tally[candidates[i]] < tally[candidates[j]] })
+	sort.Slice(candidates, func(i, j int) bool { return tally[candidates[i]] > tally[candidates[j]] })
 
 	log.Printf("  Candidate tallies:")
 	for _, c := range candidates {
